@@ -99,6 +99,13 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        //my custom post log created here...
+        'post' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/post.log'),
+            'level' => 'debug',
+        ],
     ],
 
 ];

@@ -38,6 +38,19 @@
                 @enderror
             </div>
             <div class="col-md-12">
+                <label for="">Post Type</label>
+                <select name="type" class="form-control">
+                    <option value="">Select Option</option>
+                    <option value="0">Submitted</option>
+                    <option value="1">Pending</option>
+                    <option value="2">Accepted</option>
+                    <option value="3">Rejected</option>
+                </select>
+                @error('type')
+                <label for="" class="error">{{$message}}</label>
+                @enderror
+            </div>
+            <div class="col-md-12">
                 <button type="submit" class="btn btn-primary btn-sm" style="margin: 10px 0px;">Save</button>
             </div>
         </form>

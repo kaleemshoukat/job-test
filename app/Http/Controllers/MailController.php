@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PostType;
 use App\Events\PostCreated;
 use App\Jobs\SendBulkQueueMail;
 use App\Post;
@@ -35,13 +36,15 @@ class MailController extends Controller
     public function createPost(Request $request){
         $request->validate([
            'name'=>'required' ,
-           'description'=>['required', new CheckHiLetter()],
+           'description'=>['required', new CheckHiLetter()],    //rule usage example
+            'type'=>'required' ,
         ]);
 
         try{
             $post=new Post();
             $post->name=$request->name;
             $post->description=$request->description;
+            $post->type=PostType::getPostType($request->type);  //enums usage example
             $post->save();
 
             event(new PostCreated($post));

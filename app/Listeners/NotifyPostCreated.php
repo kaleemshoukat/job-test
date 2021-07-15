@@ -6,6 +6,7 @@ use App\Events\PostCreated;
 use App\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class NotifyPostCreated
@@ -31,12 +32,17 @@ class NotifyPostCreated
         $data = User::limit(10)->get();
 
         foreach ($data as $key => $value) {
-            $input['name'] = $event->post->name;
-            $input['description'] = $event->post->description;
-            Mail::send('email_event', ['data' => $input], function($message) use($value){
-                $message->to($value['email'], $value['name'])
-                    ->subject('Test event listener');
-            });
+            try {
+                $input['name'] = $event->post->name;
+                $input['description'] = $event->post->description;
+                Mail::send('email_event', ['data' => $input], function($message) use($value){
+                    $message->to($value['email'], $value['name'])
+                        ->subject('Test event listener');
+                });
+            }
+            catch (\Exception $e){
+                Log::channel('post')->notice($e->getMessage());
+            }
         }
     }
 }
