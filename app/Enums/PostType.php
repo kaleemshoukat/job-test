@@ -12,10 +12,10 @@ use BenSampo\Enum\Enum;
  */
 final class PostType extends Enum
 {
-    const Submitted =   0;
-    const Pending =   1;
-    const Accepted =   2;
-    const Rejected = 3;
+    const Submitted= 0;
+    const Pending=   1;
+    const Accepted=  2;
+    const Rejected=  3;
 
     public static function getPostType($value){
         switch ($value) {

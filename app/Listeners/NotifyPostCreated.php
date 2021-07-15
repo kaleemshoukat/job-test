@@ -41,7 +41,9 @@ class NotifyPostCreated
                 });
             }
             catch (\Exception $e){
-                Log::channel('post')->notice($e->getMessage());
+                //notice for custom created log file
+                //PHP_EOL  is line break
+                Log::channel('post')->notice('Failed for user id= '.$value['id'].PHP_EOL.$e->getMessage());
             }
         }
     }

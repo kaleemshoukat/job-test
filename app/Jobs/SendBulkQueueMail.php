@@ -57,7 +57,7 @@ class SendBulkQueueMail implements ShouldQueue
                 $user->notify(new \App\Notifications\MailSentNotification($details_not));
             }
             catch (\Exception $e){
-                Log::info('Failed was called for user id '.$value->id);
+                Log::channel('mail')->info('Failed was called for user id '.$value->id);
             }
         }
     }

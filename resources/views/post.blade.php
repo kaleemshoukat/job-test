@@ -41,10 +41,11 @@
                 <label for="">Post Type</label>
                 <select name="type" class="form-control">
                     <option value="">Select Option</option>
-                    <option value="0">Submitted</option>
-                    <option value="1">Pending</option>
-                    <option value="2">Accepted</option>
-                    <option value="3">Rejected</option>
+                    @if(count($types))
+                        @foreach($types as $key=>$type)
+                            <option value="{{$key}}">{{$type}}</option>
+                        @endforeach
+                    @endif
                 </select>
                 @error('type')
                 <label for="" class="error">{{$message}}</label>

@@ -30,13 +30,14 @@ class MailController extends Controller
     }
 
     public function post(){
-        return view('post');
+        $types=PostType::asSelectArray();
+        return view('post', compact('types'));
     }
 
     public function createPost(Request $request){
         $request->validate([
            'name'=>'required' ,
-           'description'=>['required', new CheckHiLetter()],    //rule usage example
+           'description'=>['required', new CheckHiLetter()],    //custom rule usage example
             'type'=>'required' ,
         ]);
 

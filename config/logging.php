@@ -102,8 +102,14 @@ return [
 
         //my custom post log created here...
         'post' => [
-            'driver' => 'single',
+            'driver' => 'single',   //this will create a single file
             'path' => storage_path('logs/post.log'),
+            'level' => 'debug',
+        ],
+
+        'mail' => [
+            'driver' => 'daily',     //this will create everyday a new file
+            'path' => storage_path('logs/mail.log'),
             'level' => 'debug',
         ],
     ],
