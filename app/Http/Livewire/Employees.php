@@ -6,6 +6,7 @@ use App\Employee;
 use App\Events\EmployeeCreated;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Employees extends Component
 {
@@ -15,8 +16,11 @@ class Employees extends Component
 
     protected $listeners = ['echo:EmployeeChannel,EmployeeCreated' => 'notifyNewOrder'];
 
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public function render(){
-        $employees=Employee::all();
+        $employees=Employee::paginate(10);
         return view('livewire.employees', compact('employees'));
     }
 

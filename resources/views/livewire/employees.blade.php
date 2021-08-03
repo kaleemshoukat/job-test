@@ -58,6 +58,7 @@
             @endif
             </tbody>
         </table>
+        {{ $employees->links() }}
     </div>
 </div>
 @section('scripts')

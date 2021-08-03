@@ -1,0 +1,24 @@
+Download bagisto and unzip in htdocs
+
+1-	composer update (If it don't work run below command)
+	composer install --ignore-platform-reqs
+	
+	if still not working
+	composer update --no-scripts 
+	composer update
+
+2-	php artisan bagisto:install
+
+3-	php artisan serve
+
+4-	Make DB and check env creditianls in .env file
+
+5-	Run http://127.0.0.1:8000/ on chrome
+
+6-	Fill all the fields and in the bigning 	
+
+7-	class 'numberformatter' not found bagisto
+	The package is already included in the extensions for PHP 7.2 and above and you just need to uncomment
+	 the following line in php.ini
+
+	extension=intl
