@@ -32,7 +32,7 @@
             <form action="{{route('notification')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-12">
-                    <h4>Send Notification</h4>
+                    <h4>Send Notification Using Firebase</h4>
                 </div>
                 <div class="col-md-12">
                     <label for="">title</label>

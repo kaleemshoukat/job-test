@@ -73,6 +73,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('/post')}}">Posts</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('/send-bulk-mail')}}" title="Also run (php artisan queue:work)">Send Bulk Mails Using Job</a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
