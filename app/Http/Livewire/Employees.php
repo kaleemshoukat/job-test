@@ -12,8 +12,8 @@ class Employees extends Component
 {
     public $name, $age, $designation, $employee_id;
     public $updateMode = false;
-    public $showNewOrderNotification = false;
 
+    public $showNewOrderNotification = false;
     protected $listeners = ['echo:EmployeeChannel,EmployeeCreated' => 'notifyNewOrder'];
 
     use WithPagination;
