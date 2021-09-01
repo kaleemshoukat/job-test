@@ -17,6 +17,7 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
+        "limewell/laravel-make-extender": "^1.0",
         "livewire/livewire": "^2.5",
         "pusher/pusher-php-server": "~4.0"
     },

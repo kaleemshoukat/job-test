@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3610d41094cbd14ba1584a2c1ce34a5",
+    "content-hash": "8743db225c61e1a820211f8313eeafd1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1706,6 +1706,72 @@
                 }
             ],
             "time": "2021-01-18T20:58:21+00:00"
+        },
+        {
+            "name": "limewell/laravel-make-extender",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/limewell/laravel-make-extender.git",
+                "reference": "c1e3e1b6be9a83c8eb411bbbe3efd0877612ecdd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/limewell/laravel-make-extender/zipball/c1e3e1b6be9a83c8eb411bbbe3efd0877612ecdd",
+                "reference": "c1e3e1b6be9a83c8eb411bbbe3efd0877612ecdd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Limewell\\LaravelMakeExtender\\LaravelMakeExtenderServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelMakeExtender": "Limewell\\LaravelMakeExtender\\LaravelMakeExtenderFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Limewell\\LaravelMakeExtender\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dipesh Sukhia",
+                    "email": "dipesh.sukhia@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bhavin Gajjar",
+                    "email": "gajjarbhavin22@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package helps to generate and autoload custom helpers, It can generate multilevel helpers in context of directory.",
+            "homepage": "https://github.com/limewell/laravel-make-extender",
+            "keywords": [
+                "laravel-make-extender",
+                "limewell"
+            ],
+            "support": {
+                "issues": "https://github.com/limewell/laravel-make-extender/issues",
+                "source": "https://github.com/limewell/laravel-make-extender/tree/v1.0.1"
+            },
+            "time": "2021-06-08T11:24:03+00:00"
         },
         {
             "name": "livewire/livewire",
